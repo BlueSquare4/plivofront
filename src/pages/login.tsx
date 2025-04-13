@@ -84,7 +84,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   }
 }))
 
-const GradientButton = styled(Button)(({ theme }) => ({
+const GradientButton = styled(Button)(() => ({
   borderRadius: "12px",
   textTransform: "none",
   fontWeight: 600,
@@ -190,7 +190,7 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       router.push("/admin")
-    } catch (err) {
+    } catch {
       setError("Invalid credentials or error during login.")
     } finally {
       setLoading(false)
@@ -228,7 +228,7 @@ export default function LoginPage() {
       await sendPasswordResetEmail(auth, email)
       setResetMessage("Password reset email sent. Check your inbox.")
       setError("")
-    } catch (err) {
+    } catch {
       setError("Failed to send password reset email.")
     }
   }
@@ -527,7 +527,7 @@ export default function LoginPage() {
                     fontSize: "0.95rem"
                   }}
                 >
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <Box
                     component={Link}
                     href="/signup"

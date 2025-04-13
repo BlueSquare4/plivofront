@@ -1,7 +1,7 @@
 // src/components/ui/navigation-menu.tsx
 "use client";
 
-import * as React from "react";
+// import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 
 export const NavigationMenu = NavigationMenuPrimitive.Root;

@@ -97,7 +97,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   }
 }))
 
-const GradientButton = styled(Button)(({ theme }) => ({
+const GradientButton = styled(Button)(() => ({
   borderRadius: "12px",
   textTransform: "none",
   fontWeight: 600,
