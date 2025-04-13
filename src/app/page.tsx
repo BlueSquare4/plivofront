@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import { Box, Container, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
+import WebsiteChecker from "../components/ui/WebsiteChecker";
+
 
 // Animation variants (matching the signup vibe)
 const containerVariants = {
@@ -270,6 +272,11 @@ export default function HomePage() {
                 </Typography>
               </motion.div>
 
+              {/* Website Checker */}
+              <motion.div variants={itemVariants} className="mb-6">
+                <WebsiteChecker />
+              </motion.div>
+
               {/* Services Section */}
               <motion.div variants={itemVariants}>
                 {services.length === 0 ? (
@@ -284,6 +291,9 @@ export default function HomePage() {
                   ))
                 )}
               </motion.div>
+
+
+
 
               {/* Active Incidents Section */}
               <Box
