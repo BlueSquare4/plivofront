@@ -9,6 +9,8 @@ import socket from "@/lib/socket";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
+type Service = { id: number; name: string; };
+
 export default function AddMaintenanceForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState(""); // New state for description
@@ -16,7 +18,7 @@ export default function AddMaintenanceForm() {
   const [scheduledEnd, setScheduledEnd] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
   const [serviceId, setServiceId] = useState("");
-  const [services, setServices] = useState<any[]>([]);
+  const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
 

@@ -12,7 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { motion } from "framer-motion";
 import { Box, Container, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 // Animation variants (matching the signup vibe)
 const containerVariants = {
