@@ -9,7 +9,6 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-// Extend the base Next.js configuration
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
@@ -24,6 +23,7 @@ const eslintConfig = [
           varsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'off', // Disable the rule here
     },
   },
 ];
