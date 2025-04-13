@@ -18,13 +18,12 @@ export default function WebsiteChecker() {
     const start = performance.now();
 
     try {
-      // Remove assignment to response since it's not used
       await fetch(fullUrl, { mode: "no-cors" });
       const end = performance.now();
 
       setResponseTime(Math.round(end - start));
       setStatus("up"); // Assume up if no error is thrown
-    } catch (_err) { // Renamed error parameter to indicate it's unused
+    } catch {
       setStatus("down");
     }
   };
