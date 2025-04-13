@@ -84,7 +84,8 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   }
 }))
 
-const GradientButton = styled(Button)(() => ({
+// Option 1: Modify your GradientButton definition to use motion
+const GradientButton = styled(motion(Button))(() => ({
   borderRadius: "12px",
   textTransform: "none",
   fontWeight: 600,
@@ -485,7 +486,6 @@ export default function LoginPage() {
                   fullWidth
                   size="large"
                   disabled={loading}
-                  component={motion.button}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
