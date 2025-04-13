@@ -87,13 +87,13 @@ export default function ServiceForm({ service = null, onSave }: any) {
       {service?.id && (
         <DropdownMenu
           options={[
-            { label: "Rename Service" },
-            { label: "Delete Service" },
+            { label: "Rename Service", value: "rename" },
+            { label: "Delete Service", value: "delete" },
           ]}
           onSelect={(option) => {
-            if (option.label === "Delete Service") {
+            if (option.value === "delete") {
               handleDelete();
-            } else if (option.label === "Rename Service") {
+            } else if (option.value === "rename") {
               // Handle renaming here if necessary
               console.log("Rename Service clicked");
             }
