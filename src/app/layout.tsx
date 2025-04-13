@@ -39,7 +39,8 @@ export default function RootLayout({
           background: "linear-gradient(135deg, #0A0118 0%, #1A142F 100%)",
         }}
       >
-        <MantineProvider withGlobalStyles withNormalizeCSS theme={{ colorScheme: "dark" }}>
+        <MantineProvider defaultColorScheme="dark">
+
           <Navbar />
           <main className="relative z-10">{children}</main>
 
