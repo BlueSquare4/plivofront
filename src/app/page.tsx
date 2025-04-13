@@ -154,13 +154,13 @@ export default function HomePage() {
     try {
       const token = await user.getIdToken();
       const headers = { Authorization: `Bearer ${token}` };
-      
+
       const [s, i, m] = await Promise.all([
         axios.get<Service[]>("/services/", { headers }),
         axios.get<Incident[]>("/incidents/", { headers }),
         axios.get<Maintenance[]>("/maintenances/", { headers }),
       ]);
-      
+
       setServices(s.data);
       setIncidents(i.data);
       setMaintenances(m.data);
@@ -286,7 +286,11 @@ export default function HomePage() {
               </motion.div>
 
               {/* Active Incidents Section */}
-              <motion.div variants={itemVariants} sx={{ mt: 6 }}>
+              <Box
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mt: 6 }}
+              >
                 <Typography variant="h4" sx={{
                   mb: 2,
                   background: "linear-gradient(to right, #844FFF, #FF2FED)",
@@ -304,10 +308,14 @@ export default function HomePage() {
                     </Card>
                   ))
                 )}
-              </motion.div>
+              </Box>
 
               {/* Scheduled Maintenance Section */}
-              <motion.div variants={itemVariants} sx={{ mt: 6 }}>
+              <Box
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mt: 6 }}
+              >
                 <Typography variant="h4" sx={{
                   mb: 2,
                   background: "linear-gradient(to right, #844FFF, #FF2FED)",
@@ -328,7 +336,7 @@ export default function HomePage() {
                     </Card>
                   ))
                 )}
-              </motion.div>
+              </Box>
             </GlassCard>
           </motion.div>
         </Container>
